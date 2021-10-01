@@ -24,14 +24,15 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import '@testing-library/cypress/add-commands';
+import "@testing-library/cypress/add-commands";
 
 Cypress.Commands.add("hasNavBar", () => {
-        cy.get("img").should("have.css", "height", "50px")
-        cy.get("img").should("have.css", "width", "50px")
-        cy.get("a").contains("Movies").should("have.attr", "href", "/movies")
-        cy.get("a").contains("People").should("have.attr", "href", "/people")
-        cy.get("a").contains("Locations").should("have.attr", "href", "/locations")
-})
-
-
+  cy.get("nav").should("exist");
+  cy.get("nav img").should("have.css", "height", "50px");
+  cy.get("nav img").should("have.css", "width", "50px");
+  cy.get("nav a").contains("Movies").should("have.attr", "href", "/movies");
+  cy.get("nav a").contains("People").should("have.attr", "href", "/people");
+  cy.get("nav a")
+    .contains("Locations")
+    .should("have.attr", "href", "/locations");
+});

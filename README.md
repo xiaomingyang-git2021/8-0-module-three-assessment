@@ -1,68 +1,117 @@
-[![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
+# Module Three Assessment
 
-# Module Three Final Assessment
+This challenge is designed to assess the React skills you have developed so far.
 
-## Getting Started
+## Assessment Setup
 
-- Fork this repo
-- Clone the forked repository
-- `cd` to the directory where you cloned it
-- `npm install` to install dependencies
-- `npm run cypress` to open the cypress testing window
-- `npm test` to run jest / node tests
+### Getting started
 
-> _Note_: Remember to `git add`, `git commit` and `git push` regularly
+1. Fork and clone this repository.
 
-Using the [Studio Ghibli API](https://ghibliapi.herokuapp.com/), you are going to create a frontend-only app.
+1. Navigate to the cloned repository's directory on your command line. Then, run the following command:
 
-#### Nav Bar
-At the top of your app you should have a navigation bar.
+   ```
+   npm install
+   ```
 
-* It displays links to each primary route ("/movies", "/people", "/locations") at the top of the page, in a row, centered.
+   This will install the libraries needed to run the tests.
 
-* Includes a logo of your choosing (50px x 50px), displayed in the upper-left of the page.
-The logo and links should display on every page.
-The logo should link to the homepage ("/").
+1. Open up the repository in VSCode. Follow the instructions below to complete the Lab.
 
-Your app should also include the following routes:
+### Tests
 
-### `/`
-Includes a centered header with the text "Welcome to GhibliApp". ![Welcome Page](./assets/welcome.png)
+To run the tests, you can run the following command from the command line. You will need to be in the root directory of your local directory.
 
-### `/movies`
-Displays the header "Select a Movie" above a dropdown menu, in the upper ~400px of the page, centered.
-The dropdown menu should display a list of the titles of each movie in the database. The first item in the dropdown menu should be blank.
-When a movie is chosen from the dropdown menu, the title, release date, and description of that movie should display below it.
-In this route, there should be no "Submit" button. Selection from the dropdown menu should submit the user's input automatically.
-New inputs should replace the previously displayed information. When 'blank' is selected the movie info should clear off the screen.
-![Before Select](./assets/movieSelect1.png)
-![After Select](./assets/movieSelect2.png)
+```
+npm run cypress
+```
 
-### `/people`
-Displays the header "Search for a Person" above a text input with a "Search" button, in the upper ~400px of the page, centered.
-When a user inputs text and presses "Search", the name, age, and gender, of the character should appear below. **Bonus:** *Include the film/s (by name and any other fun info) that the character appears in.* 
-This input should be case-insensitive. The input will accept a full name (no need for partial matches). If the user's input does not match a name (misspelled or otherwise), the text "Not Found" should display below the input.
-The input should clear once the "Search" button is pressed.
-It's OK if the age or gender of the character is "N/A".
-New inputs should replace the previously displayed information.
-![Pre Search](./assets/search1.png)
-![Successful Search](./assets/search2.png)
-![Not found](./assets/search3.png)
+This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
 
-### `/locations`
-Displays a header, centered on the page, with the text "List of Locations".
-Display a button that toggles back and forth between "Show Locations" and "Hide Locations". When show locations has been selected, it
-displays an unordered list of all of the locations stored in the Ghibli API, centered on the page.
-Each location should include the name, climate, and terrain of that location. If the climate or the terrain are "TODO" in the API response, you should replace "TODO" with "Unknown".
-![locations hidden](./assets/locations1.png)
-![locations showing](./assets/locations2.png)
+## Instructions
 
+Using the [Studio Ghibli API](https://ghibliapi.herokuapp.com/), you are going to create a frontend-only application that displays information about the movies, characters, and locations created by Studio Ghibli.
 
-Afterwards, you should work on styling:
+### Features
 
-Import two fonts (of your choosing) from Google Fonts. The first font should be the font you use for header text and the second one should be for input/body/search result text.
-Define unique colors (of your choosing) for each page's background.
+You will need to complete features for four different pages and create a navigation bar that is present on all pages.
 
-Remember to install your packages correctly so that we will be able to run / compile your app by running npm install, npm start.
+#### Home page (`/`)
 
-Your app should also have a **clean** console. We don't want to see you Warnings, Errors, or Logs. 
+- [ ] Your home page should be accessible via the `/` route and include the following text:
+
+  ```
+  Welcome to GhibliApp
+  ```
+
+  ![Welcome Page](./assets/welcome.png)
+
+#### Navigation bar
+
+- [ ] The navigation bar should be created using the `nav` element.
+
+- [ ] The navigation bar should include a logo of your choosing which is 50px wide and 50px high. It should be displayed in the upper-left corner of the page.
+
+- [ ] Clicking on the logo should return the user to the home page.
+
+- [ ] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
+
+#### Movies page (`/movies`)
+
+- [ ] All content should be inside some element with the class `.movies`.
+
+- [ ] Has the text "Select a Movie" on the page.
+
+- [ ] Has a `select` dropdown that includes an "empty" option element followed by all of the films produced by Studio Ghibli.
+
+  ![Before Select](./assets/movieSelect1.png)
+
+- [ ] When a new option is selected from the dropdown, the movie's title, release date, and description should appear underneath the dropdown. At least the title of the movie should be in some kind of heading.
+
+  ![After Select](./assets/movieSelect2.png)
+
+- [ ] When the "empty" option is selected yet again, the film's information should disappear.
+
+#### People page
+
+- [ ] All content should be inside of some element with the class `.people`.
+
+- [ ] Has the text "Search for a Person" on the page.
+
+- [ ] Has a form that includes a text input and a submit button. Use a `button` element for the submit button, not an `input` element.
+
+  ![Pre Search](./assets/search1.png)
+
+- [ ] After typing a name into the text field and pressing submit, the relevant character's name, age, and gender should be shown on the page. Submitting the form should also clear the text field.
+
+  ![Successful Search](./assets/search2.png)
+
+- [ ] If the search does not yield any results, the text "Not Found" should be displayed.
+
+  ![Not found](./assets/search3.png)
+
+#### Locations page
+
+- [ ] All content should be inside of some element with the class `.locations`.
+
+- [ ] Has the text "List of Locations" on the page.
+
+- [ ] When arriving on the page, has a button with the text "Show Locations".
+
+  ![locations hidden](./assets/locations1.png)
+
+- [ ] When the "Show Locations" button is clicked, the text should be changed to "Hide Locations".
+
+- [ ] When the "Show Locations" button is clicked, all of the locations received from the API should be displayed. Each location should include it's name, climate, and terrain.
+
+  Use list items to display each of these locations.
+
+  ![locations showing](./assets/locations2.png)
+
+- [ ] When the "Hide Locations" button is clicked, all of the locations should be hidden.
+
+#### Additional tasks
+
+- [ ] Your application should have no warnings or errors from React.
+
+- [ ] Once you are completed with the above tasks, add styling to the application.
