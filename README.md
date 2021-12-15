@@ -123,3 +123,19 @@ You will need to complete features for four different pages and create a navigat
 - [ ] Your application should have no warnings or errors from React.
 
 - [ ] Once you are completed with the above tasks, add styling to the application.
+
+## Learning objectives assessed
+
+The following learning objectives will be assessed in this assessment:
+
+- Build functional components with JSX.
+- Create a component hierarchy, making use of multiple components in a single React application.
+- Write class components in React making use of the `constructor()` and `render()` methods.
+- Use props to customize components.
+- Build complex component architectures that pass props downwards multiple levels.
+- Set state on an individual component to modify that component’s presentation.
+- Write an event handler that modifies state on user interaction.
+- Build controlled forms that manage the state of the form.
+- Integrate API calls into your React application through `componentDidMount()`.
+- Use React Router to create the appearance of multiple pages.
+- Use the `Link` element to build links to different pages on your application.
