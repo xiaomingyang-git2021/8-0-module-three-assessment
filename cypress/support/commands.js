@@ -30,9 +30,31 @@ Cypress.Commands.add("hasNavBar", () => {
   cy.get("nav").should("exist");
   cy.get("nav img").should("have.css", "height", "50px");
   cy.get("nav img").should("have.css", "width", "50px");
-  cy.get("nav a").contains("Movies").should("have.attr", "href", "/movies");
-  cy.get("nav a").contains("People").should("have.attr", "href", "/people");
-  cy.get("nav a")
-    .contains("Locations")
-    .should("have.attr", "href", "/locations");
+  cy.get("nav")
+    .contains(/Movies/)
+    .then(($el) => {
+      if ($el.get(0).nodeName === "A") {
+        cy.wrap($el).should("have.attr", "href", "/movies");
+      } else {
+        cy.wrap($el).parent("a").should("have.attr", "href", "/movies");
+      }
+    });
+  cy.get("nav")
+    .contains(/People/)
+    .then(($el) => {
+      if ($el.get(0).nodeName === "A") {
+        cy.wrap($el).should("have.attr", "href", "/people");
+      } else {
+        cy.wrap($el).parent("a").should("have.attr", "href", "/people");
+      }
+    });
+  cy.get("nav")
+    .contains(/Locations/)
+    .then(($el) => {
+      if ($el.get(0).nodeName === "A") {
+        cy.wrap($el).should("have.attr", "href", "/locations");
+      } else {
+        cy.wrap($el).parent("a").should("have.attr", "href", "/locations");
+      }
+    });
 });
