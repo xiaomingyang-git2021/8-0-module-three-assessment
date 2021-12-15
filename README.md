@@ -28,6 +28,14 @@ npm run cypress
 
 This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
 
+#### Testing Tips
+
+Keep the following in mind for this lab as you run the tests.
+
+1. While running your tests, you must have a server up and running in another terminal. This means you will have _both_ a terminal window running the actual React application _and_ a terminal window running the tests.
+
+1. While the `cypress-watch-and-reload` package has been installed in this project, sometimes the React application will take longer to reload than the tests. If you feel as though a test should be passing that isn't, try pressing the re-run button in the Cypress tests before asking for help.
+
 ## Instructions
 
 Using the [Studio Ghibli API](https://ghibliapi.herokuapp.com/), you are going to create a frontend-only application that displays information about the movies, characters, and locations created by Studio Ghibli.
